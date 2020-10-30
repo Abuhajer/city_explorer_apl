@@ -1,17 +1,50 @@
 # city_explorer_apl
-Number and name of feature: ________________________________
+Number and name of feature: 1. Repository Set Up
+ Estimate of time needed to complete: 20min
 
-Estimate of time needed to complete: _____
+Start time: 10:00pm
 
-Start time: _____
+Finish time: 10:10pm
 
-Finish time: _____
+Actual time needed to complete: 10min
 
-Actual time needed to complete: _____
+Number and name of feature: 2. Location
+
+Estimate of time needed to complete: 60min
+
+Start time: 10:10pm
+
+Finish time: 11:40pm
+
+Actual time needed to complete: 150min
+
+Number and name of feature: 2. Weather
+
+Estimate of time needed to complete: 60min
+
+Start time: 11:40pm
+
+Finish time: 12:40pm.
+
+Actual time needed to complete: 60min
+
+Number and name of feature: 3. Error Handling
+
+Estimate of time needed to complete: 20min
+
+Start time: 12:40pm
+
+Finish time: 12:55pm
+
+Actual time needed to complete: 15min
+
+
+
 
 # Project Name
+# city_explorer_apl
 
-**Author**: Your Name Goes Here
+**Author**: Diala
 **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
 
 ## Overview
