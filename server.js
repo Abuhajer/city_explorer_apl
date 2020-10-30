@@ -1,3 +1,4 @@
+
 'use strict';
 
 // server build
@@ -21,7 +22,7 @@ const PORT = process.env.PORT || 3001;
 app.use(cors());
 
 
-
+///--------LOCATION-----------///
 // routes
 app.get('/location', (request, response) => {
   try{
@@ -33,7 +34,7 @@ app.get('/location', (request, response) => {
       let finalObj = new Location(city, resultFromSuperAgent.body[0])
       response.status(200).send(finalObj);
     })
-
+    //error   
   } catch(err){
     console.log('ERROR', err);
     response.status(500).send('sorry, we messed up');
@@ -46,7 +47,7 @@ function Location(searchQuery, obj){
   this.latitude = obj.lat;
   this.longitude = obj.lon;
 }
-
+///------------WEATHER------------///
 //start the server
 
 app.get('/weather', (request, response) => {
@@ -68,7 +69,7 @@ app.get('/weather', (request, response) => {
   }
 })
 
-
+///---------HICKING-----------///
 
 app.get('/trails', (request, response) => {
   try {
@@ -89,6 +90,8 @@ app.get('/trails', (request, response) => {
     response.status(500).send('sorry, we meesed up');
   }
 })
+
+//constructor function 
 function Trail(obj){
   this.name = obj.name;
   this.location = obj.location;
@@ -107,6 +110,8 @@ function Trail(obj){
 app.get('*', (request, response) => {
   response.status(404).send('sorry, this route does not exist here');
 })
+
+// start the server
 app.listen(PORT, () => {
   console.log(`listening on ${PORT}`);
 })
