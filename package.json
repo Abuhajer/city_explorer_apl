@@ -1,5 +1,5 @@
 {
-  "name": "city_explorer_apl",
+  "name": "city_explorer",
   "version": "1.0.0",
   "description": "Number and name of feature: 1. Repository Set Up  Estimate of time needed to complete: 20min",
   "main": "server.js",
