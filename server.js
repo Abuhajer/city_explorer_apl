@@ -62,7 +62,7 @@ function Location(searchQuery, obj){
 }
 
 // start the server
-const PORT=3006
+const PORT=3007
 
 
 // 3. As user, I want to request current weather info for location entered :)
