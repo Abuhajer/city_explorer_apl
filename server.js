@@ -14,11 +14,11 @@ const cors = require('cors');
 app.use(cors());
 
 
-app.get('/',homepage)
-
-function homepage (request,response){
+app.get('/',(request, response)=>{
   response.send('Welcome to our homepage')
-}
+})
+
+
 // 2. As user, I want to enter name of location so I can see data about the area.
 // Create a route with a method of get and a path of /location. 
 //The route callback should invoke a function to convert the search query to a latitude and longitude. 
