@@ -7,18 +7,17 @@ const app = express(); // we have express aplication that is ready to use
 
 // dotenv lets us get our secrets from our .env file
 require('dotenv').config();
-// start the server
-const port=3000
+
 //  tells who is ok to send data to
 const cors = require('cors');
 app.use(cors());
 
 
-app.get('/',(request, response)=>{
+app.get('/',homepage)
+
+function homepage (request,response){
   response.send('Welcome to our homepage')
-})
-
-
+}
 // 2. As user, I want to enter name of location so I can see data about the area.
 // Create a route with a method of get and a path of /location. 
 //The route callback should invoke a function to convert the search query to a latitude and longitude. 
@@ -62,8 +61,8 @@ function Location(searchQuery, obj){
   this.longitude = obj.lon;
 }
 
-
-
+// start the server
+const PORT=process.env.PORT
 
 // 3. As user, I want to request current weather info for location entered :)
 // Create route with method get and path of /weather. Use provided JSON :)
@@ -100,8 +99,8 @@ function Weather(obj){
   this.time = obj.valid_date;
 }
 
-app.listen(port, () => {
-  console.log(`listening on ${port}`);
+app.listen(PORT, () => {
+  console.log(`listening on ${PORT}`);
 })
 app.get('*', (request, response) => {
   response.status(404).send('sorry, this route does not exist');
