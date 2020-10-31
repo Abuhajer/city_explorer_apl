@@ -13,7 +13,11 @@ const cors = require('cors');
 app.use(cors());
 
 
+app.get('/',homepage)
 
+function homepage (request,response){
+  response.send('Welcome to our homepage')
+}
 // 2. As user, I want to enter name of location so I can see data about the area.
 // Create a route with a method of get and a path of /location. 
 //The route callback should invoke a function to convert the search query to a latitude and longitude. 
@@ -25,6 +29,7 @@ app.get('/location', (request, response) => {
 
     // call lat/long function :
     let search_query = request.query.city;
+    console.log(search_query);
 
     let geoData = require('./data/location.json');
 
@@ -32,7 +37,7 @@ app.get('/location', (request, response) => {
 
     console.log(returnObj);
 
-    response.status(200).send(returnObj);
+    response.json(returnObj);
 
   } catch(err){ //error hundler
     // Search for invalid location to confirm
@@ -50,17 +55,15 @@ function Location(searchQuery, obj){
  // eslint-disable-next-line camelcase
   this.search_query = searchQuery;
 
-    // eslint-disable-next-line camelcase
+    // eslint-disable-next-line camelcase.
   this.formatted_query = obj.display_name;
   this.latitude = obj.lat;
   this.longitude = obj.lon;
 }
 
 // start the server
-const PORT=3001
-app.listen(PORT, () => {
-  console.log(`listening on ${PORT}`);
-})
+const PORT=3005
+
 
 // 3. As user, I want to request current weather info for location entered :)
 // Create route with method get and path of /weather. Use provided JSON :)
@@ -90,11 +93,16 @@ app.get('/weather', (request, response) => {
 })
 // fallback if can't get route
 
-app.get('*', (request, response) => {
-  response.status(404).send('sorry, this route does not exist');
-})
+
 
 function Weather(obj){
   this.forecast = obj.weather.description;
   this.time = obj.valid_date;
 }
+
+app.listen(PORT, () => {
+  console.log(`listening on ${PORT}`);
+})
+app.get('*', (request, response) => {
+  response.status(404).send('sorry, this route does not exist');
+})
