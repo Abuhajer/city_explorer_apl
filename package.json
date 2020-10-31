@@ -1,16 +1,18 @@
 {
   "name": "city_explorer_apl",
   "version": "1.0.0",
-  "description": "",
+  "description": "Number and name of feature: 1. Repository Set Up  Estimate of time needed to complete: 20min",
   "main": "server.js",
   "scripts": {
-    "test": "nodemon server.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MsDiala/city_explorer_apl.git"
   },
-  "author": "Diala",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MsDiala/city_explorer_apl/issues"
@@ -19,7 +21,6 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "nodemon": "^2.0.6"
+    "express": "^4.17.1"
   }
 }
