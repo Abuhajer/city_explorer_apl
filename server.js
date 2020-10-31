@@ -101,7 +101,7 @@ function Weather(obj){
 }
 
 app.listen(port, () => {
-  console.log(`listening on ${PORT}`);
+  console.log(`listening on ${port}`);
 })
 app.get('*', (request, response) => {
   response.status(404).send('sorry, this route does not exist');
