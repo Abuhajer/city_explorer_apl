@@ -7,7 +7,8 @@ const app = express(); // we have express aplication that is ready to use
 
 // dotenv lets us get our secrets from our .env file
 require('dotenv').config();
-
+// start the server
+const port=3000
 //  tells who is ok to send data to
 const cors = require('cors');
 app.use(cors());
@@ -61,8 +62,7 @@ function Location(searchQuery, obj){
   this.longitude = obj.lon;
 }
 
-// start the server
-const PORT=3007
+
 
 
 // 3. As user, I want to request current weather info for location entered :)
@@ -100,7 +100,7 @@ function Weather(obj){
   this.time = obj.valid_date;
 }
 
-app.listen(PORT, () => {
+app.listen(port, () => {
   console.log(`listening on ${PORT}`);
 })
 app.get('*', (request, response) => {
